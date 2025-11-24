@@ -26,7 +26,7 @@ Then to send requests to the client you can you use the client executable.
 __EXAMPLE__
 
 ```bash
-./client 8080 "GET ./html/user/dummy.html"
+./client 8080 "GET user/dummy.html"
 ```
 
 ## Spec

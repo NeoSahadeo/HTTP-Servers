@@ -3,6 +3,34 @@
 HTTP 0.9 is an informal standard to retrieve information from the server. That
 information being HTML
 
+## Usage
+
+After cloning the repo, run the make file.
+
+```bash
+make all
+```
+
+The server can be started with, it optionally takes in a port number.
+
+```bash
+./server
+```
+
+Then to send requests to the client you can you use the client executable.
+
+```bash
+./client PORT MESSAGE
+```
+
+__EXAMPLE__
+
+```bash
+./client 8080 "GET ./html/user/dummy.html"
+```
+
+## Spec
+
 <h6>
 	Connection
 </h6>

@@ -57,13 +57,13 @@ void send_file(int client_socket_fd, const char* restrict path) {
 
   if (count < 80) {
     buffer[80] = '\r';
-    buffer[81] = '\f';
+    buffer[81] = '\n';
     send(client_socket_fd, buffer, 82, 0);
   } else {
     send(client_socket_fd, buffer, 82, 0);
     bzero(buffer, 82);
     buffer[0] = '\r';
-    buffer[1] = '\f';
+    buffer[1] = '\n';
     send(client_socket_fd, buffer, 82, 0);
   }
   fclose(fptr);
@@ -175,7 +175,7 @@ int main(int argc, char** argv) {
             if (is_valid) {
               for (size_t t = buffer_size - 1024; t < buffer_size; t++) {
                 if (t + 1 < buffer_size) {
-                  if (buffer[t] == '\r' && buffer[t + 1] == '\f') {
+                  if (buffer[t] == '\r' && buffer[t + 1] == '\n') {
                     // Buffer needed to store "./html/" + FILE_PATH
                     char* short_buffer = calloc(buffer_size + 7, sizeof(char));
                     strcpy(short_buffer, "./html/");
@@ -188,7 +188,7 @@ int main(int argc, char** argv) {
                     // Set the null terminator to before the CR
                     // Here is how 3 is calculated:
                     // ./html/user/dummy.html
-                    // GET user/dummy.html   \r\f
+                    // GET user/dummy.html   \r\n
                     //                    |  |
                     //                    S  E<---3 spaces after the 7-GET+SPACE
                     short_buffer[t + 3] = 0;

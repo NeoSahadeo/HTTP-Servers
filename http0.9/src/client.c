@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
   if (argc == 3) {
     port = atoi(argv[1]);
     message = strncpy(message, argv[2], 1024);
-    strcat(message, "\r\f");
+    strcat(message, "\r\n");
   } else {
     printf("Requires a port number followed by a message!\n");
     free(message);

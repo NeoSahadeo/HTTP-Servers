@@ -1,7 +1,7 @@
 # HTTP 0.9
 
 HTTP 0.9 is an informal standard to retrieve information from the server. That
-information being HTML
+information being HTML documents.
 
 ## Usage
 
@@ -11,13 +11,13 @@ After cloning the repo, run the make file.
 make all
 ```
 
-The server can be started with, it optionally takes in a port number.
+The server can be started with this command; it optionally takes in a port number.
 
 ```bash
 ./server
 ```
 
-Then to send requests to the client you can you use the client executable.
+Then to send requests to the client you can use the client executable.
 
 ```bash
 ./client PORT MESSAGE
@@ -29,7 +29,7 @@ __EXAMPLE__
 ./client 8080 "GET user/dummy.html"
 ```
 
-## Spec
+## 0.9 Spec
 
 <h6>
 	Connection
@@ -84,7 +84,7 @@ __EXAMPLE__
 </h6>
 <ol>
 	<li data-list-item-id="e89dc2ef2d1ad07588fc58e40a62b6d0b">
-		After the while document is transferred the connection is closed by the server.
+		After the document is transferred the connection is closed by the server.
 	</li>
 	<li data-list-item-id="e873a601a761a310ef93efa998f6edc1b">
 		The client may break the connection

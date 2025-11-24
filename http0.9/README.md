@@ -29,6 +29,18 @@ __EXAMPLE__
 ./client 8080 "GET user/dummy.html"
 ```
 
+## Using Telnet as a client
+
+Telnet works roughly the same. After running the connection command, type in
+the get request eg "GET ..." then hit the ENTER key which should return a
+response from the server.
+
+__EXAMPLE__
+
+```bash
+telnet 127.0.0.1 8080
+```
+
 ## 0.9 Spec
 
 <h6>

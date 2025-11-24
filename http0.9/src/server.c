@@ -158,6 +158,8 @@ int main(int argc, char** argv) {
               goto terminate_connection;
             }
 
+            write(STDOUT_FILENO, buffer, bytes_in);
+
             // Scan the first iteration of read and check if it contains GET +
             // space
             if (p == 0) {
